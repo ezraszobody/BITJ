@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(27, 27, 27);
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.delete-btn {
+    background: white;
+    color: rgb(112, 0, 0);
+    border-color: rgb(112, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+    border-radius: 40%;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover; 
+    margin-right: 10px;
+}
+
+#alert_img {
+    width: 20px;
+    fill: rgb(0, 0, 116);
+}
+
+.alert {
+    height: 60px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.card-body {
+    background-color:rgb(27, 27, 27);
+}
+
+
+
+h1, h2, p, h3, h5, label, small {
+    color: white;
+}
+
+small.text-muted {
+    color: white !important;
+}
+
+.card-title {
+    color: white; 
+}
+
+.alert-warning {
+    background-color: rgb(80, 80, 0);
+    color: black;
+}
+
+a {
+    color: #F5DEB3;
+}
+
+.vulture-container {
+    position: fixed; /* Keeps the image fixed in place */
+    bottom: 10px; /* Positions the container at the bottom */
+    right: 0; /* Positions the container at the right */
+    width: 300px; /* Adjust to control how much of the image is visible */
+    height: 300px; /* Adjust to control how much of the image is visible */
+    z-index: 1000; /* Ensures the image stays on top of other content */
+}
+
+.vulture-image {
+    width: 105%; /* Slightly larger than the container to create a cropping effect */
+    height: 140%; /* Maintains aspect ratio */
+    transform: translate(10%, -5%); /* Adjust to control how much of the image is cropped */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+.volation {
+    width: 500px
+}

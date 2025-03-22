@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Master Password</title>
+    <style>
+        body {
+            background-color: #1a1a1a; /* Dark background */
+            color: #fff; /* White text */
+            font-family: Arial, sans-serif;
+        }
+
+        body.password-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .password-container {
+            text-align: center;
+            background-color: #333; /* Dark container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 500px;
+            align-items: center;
+            justify-content: center;
+        }
+        input[type="password"] {
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #D4A017; /* Trench-themed yellow */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b8860b; /* Darker yellow on hover */
+        }
+        .error {
+            color: #ff4444; /* Red error message */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>404 ER_ROR</h3>
+    <p>you are in violation. thEy mustn't know you were here. no one should ever find out About this. you can never tell anyone about thiS -- for The sake of the others' survIval, you muSt keep this silent. we mUst keeP silent. no one can know. no one can know. no o ne c an kn ow_</p>
+    <br>
+    <p>(Violation Code. 15398642_14)</p>
+    <div class="password-container">
+        <p>Please enter the master password to continue:</p>
+        <input type="password" id="password" placeholder="Master Password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error" class="error"></p>
+      
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const error = document.getElementById('error');
+
+            // Replace 'YourMasterPassword' with your actual master password
+            if (password === 'failedperimeterescape') {
+                window.location.href = 'test.php'; // Redirect to the main page
+            } else {
+                error.textContent = 'Incorrect password. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>

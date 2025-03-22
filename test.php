@@ -66,7 +66,7 @@ $results = $db->query('SELECT * FROM Messages ORDER BY timestamp DESC');
                     <label for="message" class="form-label">Message:</label>
                     <textarea name="message" class="form-control" required></textarea>
                 </div>
-                <button type="submit" name="submit" class="btn btn-primary">Send</button>
+                <button type="submit" name="submit" class="btn yellow-btn">Send</button>
             </form>
         <?php else: ?>
             <div class="alert alert-warning">
@@ -90,7 +90,7 @@ $results = $db->query('SELECT * FROM Messages ORDER BY timestamp DESC');
                     </div>
                     <?php if (isset($_SESSION['username']) && $_SESSION['username'] === $row['username']): ?>
                         <form method="POST" class="mt-2">
-                            <button type="submit" name="delete" value="<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" name="delete" value="<?php echo $row['id']; ?>" class="btn btn-sm">Delete</button>
                         </form>
                     <?php endif; ?>
                 </div>

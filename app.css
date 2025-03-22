@@ -64,8 +64,8 @@ small.text-muted {
     color: black;
 }
 
-a {
-    color: #F5DEB3;
+.nav-link {
+    color: #fff384 !important;
 }
 
 .vulture-container {
@@ -84,6 +84,28 @@ a {
     object-fit: cover; /* Ensures the image covers the container */
 }
 
-.volation {
-    width: 500px
+.nav-link.active {
+    background-color: rgb(100, 100, 0) !important;
+}
+
+.btn {
+    color: rgb(255, 110, 110);
+    border-width: 3px;
+    border-color: rgb(97, 0, 0);
+}
+
+.yellow-btn {
+    color: #fff384;
+    border-width: 3px;
+    border-color: rgb(100, 100, 0);
+}
+
+.btn:hover {
+    color: rgb(255, 110, 110);
+    background-color:rgb(97, 0, 0);
+}
+
+.yellow-btn:hover {
+    color: #fff384;
+    background-color: rgb(100, 100, 0);
 }

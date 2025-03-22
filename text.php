@@ -116,7 +116,7 @@ if (isset($_GET['logout'])) {
 <body>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="test.php">Chat</a>
+            <a style="color: #F5DEB3"class="nav-link" href="test.php">Chat</a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="text.php">Account</a>
@@ -144,7 +144,7 @@ if (isset($_GET['logout'])) {
                 <label for="profile_pic" class="form-label">Profile Picture:</label>
                 <input type="file" name="profile_pic" class="form-control">
             </div>
-            <button type="submit" name="signup" class="btn btn-primary">Sign Up / Log In</button>
+            <button type="submit" name="signup" class="btn yellow-btn">Sign Up / Log In</button>
         </form>
 
         <!-- Logout Button -->

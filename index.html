@@ -6,7 +6,8 @@
     <title>Enter Master Password</title>
     <style>
         body {
-            background-color: #1a1a1a; /* Dark background */
+
+            background-color: #222;
             color: #fff; /* White text */
             font-family: Arial, sans-serif;
         }
@@ -51,10 +52,25 @@
             color: #ff4444; /* Red error message */
             margin-top: 10px;
         }
+        .dema-container {
+    position: fixed; /* Keeps the image fixed in place */
+    bottom: 10px; /* Positions the container at the bottom */
+    right: 0; /* Positions the container at the right */
+    width: 700px; /* Adjust to control how much of the image is visible */
+    height: 530px; /* Adjust to control how much of the image is visible */
+    z-index: 1000; /* Ensures the image stays on top of other content */
+}
+
+.dema {
+    width: 105%; /* Slightly larger than the container to create a cropping effect */
+    height: 140%; /* Maintains aspect ratio */
+    transform: translate(10%, -5%); /* Adjust to control how much of the image is cropped */
+    object-fit: cover; /* Ensures the image covers the container */
+}
     </style>
 </head>
 <body>
-    <h3>404 ER_ROR</h3>
+    <h2>404 ER_ROR</h3>
     <p>you are in violation. thEy mustn't know you were here. no one should ever find out About this. you can never tell anyone about thiS -- for The sake of the others' survIval, you muSt keep this silent. we mUst keeP silent. no one can know. no one can know. no o ne c an kn ow_</p>
     <br>
     <p>(Violation Code. 15398642_14)</p>
@@ -64,8 +80,9 @@
         <button onclick="checkPassword()">Submit</button>
         <p id="error" class="error"></p>
       
-    </div>
-
+    </div><div class="dema-container">
+    <img class="dema"src="ac85bbe75c6f7973302550440b7582dd5996fe1fr1-1536-1517v2_hq-removebg-preview.png" alt="">
+</div>
     <script>
         function checkPassword() {
             const password = document.getElementById('password').value;

@@ -43,6 +43,10 @@
 
     .audio-entry {
       margin-bottom: 2rem;
+      background-color: #010;
+      padding: 1rem;
+      border: 1px dashed #003300;
+      box-shadow: 0 0 5px #003300;
     }
 
     .corrupt {
@@ -81,10 +85,11 @@
       padding: 3rem;
       color: #ff4444;
       position: relative;
+      overflow: hidden;
     }
 
     .error-screen::before {
-      content: "01001000 01100101 01101100 01110000";
+      content: "01001000 01100101 01101100 01110000 01000101 01010010 01010010 01001111 01010010 00100000 01000011 01001111 01010010 01010010 01010101 01010000 01010100 01001001 01001111 01001110";
       position: absolute;
       top: 0;
       left: 0;
@@ -96,14 +101,42 @@
       overflow: hidden;
       pointer-events: none;
       z-index: 0;
+      color: #00ff00;
     }
 
     .code-noise {
       font-size: 0.7rem;
       color: #007700;
-      opacity: 0.3;
+      opacity: 0.4;
       margin-top: 1rem;
       word-break: break-word;
+    }
+
+    .glitch-block {
+      background: #000;
+      color: #0f0;
+      font-size: 0.65rem;
+      line-height: 1.2;
+      opacity: 0.25;
+      max-height: 100px;
+      overflow: auto;
+      padding: 0.5rem;
+      border: 1px dashed #003300;
+      margin-top: 1rem;
+      word-wrap: break-word;
+    }
+
+    .glitch-overlay {
+      font-size: 0.6rem;
+      opacity: 0.15;
+      color: #0f0;
+      white-space: pre-wrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 0;
+      pointer-events: none;
     }
   </style>
   <script>
@@ -127,9 +160,24 @@
     <div class="code-noise">
       <code>01100111 01100001 01110010 01110010 01101111 01110011 00101101 01110100 01101000 01110010 01100101 01100001 01110100 00100000 01100001 01100011 01110100 01101001 01110110 01100001 01110100 01100101 01100100</code>
     </div>
+    <div class="glitch-block">
+      INIT_SEQUENCE(0x04AF) :: RUNNING <br>
+      STACK_DUMP: 0x0f0001ff000001a0f... <br>
+      WARNING: memory leak detected in NODE_5 <br>
+      LOC: garros.prime.ghost.signal[45] -> unresolved echo<br>
+      BINARY_STREAM: 101010111100110111001000010101010101...<br>
+      SIGNAL_FRAGMENT: *whispers* help me *STATIC* don’t listen...
+    </div>
   </div>
 
   <div id="main-content">
+    <div class="glitch-overlay">
+      1010111000100101010010101101010100001111000001110100101010010100010101010101010100010001010101001111110001010101 010101...<br>
+      [MEMORY HOOKS LOST] // echo fragment /signal bleed/... <br>
+      >>> INIT STREAM ~ NODE 5-A ... RESIDUAL FOUND. . . <br>
+      [RECORDING SPLICE] = 00001111 11001100 10101010 ...
+    </div>
+
     <h1 class="glitch">GARROS ARCHIVE NODE 5-A</h1>
     <p><span class="warning">WARNING:</span> Classified comms backup. Playback may induce stress hallucinations. Continue only with clearance.</p>
 

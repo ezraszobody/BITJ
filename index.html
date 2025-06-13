@@ -1,222 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GARROS ARCHIVE NODE 5</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #33ff33;
-      font-family: 'Courier New', monospace;
-      padding: 2rem;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2 {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .glitch {
-      animation: glitch 1.5s infinite;
-    }
-
-    @keyframes glitch {
-      0% { opacity: 1; }
-      10% { opacity: 0.7; transform: translateX(-2px); }
-      20% { opacity: 1; transform: translateX(2px); }
-      30% { opacity: 0.6; }
-      40% { opacity: 1; transform: translateY(-1px); }
-      50% { opacity: 0.5; transform: translateY(2px); }
-      60% { opacity: 1; transform: none; }
-      70% { opacity: 0.3; transform: translateX(-1px); }
-      80% { opacity: 1; }
-      90% { opacity: 0.7; }
-      100% { opacity: 1; transform: none; }
-    }
-
-    .warning {
-      color: #ff4444;
-      font-weight: bold;
-    }
-
-    .audio-entry {
-      margin-bottom: 2rem;
-      background-color: #010;
-      padding: 1rem;
-      border: 1px dashed #003300;
-      box-shadow: 0 0 5px #003300;
-    }
-
-    .corrupt {
-      color: #888;
-      text-decoration: line-through;
-    }
-
-    .redacted {
-      background-color: #111;
-      color: #111;
-      padding: 0 0.5rem;
-      border: 1px solid #111;
-    }
-
-    .fake-button {
-      background-color: #111;
-      color: #33ff33;
-      border: 1px dashed #33ff33;
-      padding: 0.5rem;
-      display: inline-block;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-
-    .fake-button:hover {
-      color: #ff4444;
-      border-color: #ff4444;
-    }
-
-    #main-content {
-      display: none;
-    }
-
-    .error-screen {
-      text-align: center;
-      padding: 3rem;
-      color: #ff4444;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .error-screen::before {
-      content: "01001000 01100101 01101100 01110000 01000101 01010010 01010010 01001111 01010010 00100000 01000011 01001111 01010010 01010010 01010101 01010000 01010100 01001001 01001111 01001110";
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 0.75rem;
-      opacity: 0.1;
-      white-space: pre-wrap;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-      color: #00ff00;
-    }
-
-    .code-noise {
-      font-size: 0.7rem;
-      color: #007700;
-      opacity: 0.4;
-      margin-top: 1rem;
-      word-break: break-word;
-    }
-
-    .glitch-block {
-      background: #000;
-      color: #0f0;
-      font-size: 0.65rem;
-      line-height: 1.2;
-      opacity: 0.25;
-      max-height: 100px;
-      overflow: auto;
-      padding: 0.5rem;
-      border: 1px dashed #003300;
-      margin-top: 1rem;
-      word-wrap: break-word;
-    }
-
-    .glitch-overlay {
-      font-size: 0.6rem;
-      opacity: 0.15;
-      color: #0f0;
-      white-space: pre-wrap;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-  </style>
-  <script>
-    window.onload = function() {
-      const errorAudio = new Audio('error_beep.mp3');
-      errorAudio.play();
-      document.getElementById('continue-btn').onclick = function() {
-        document.getElementById('error-screen').style.display = 'none';
-        document.getElementById('main-content').style.display = 'block';
-      };
-    };
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM ERROR</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 255, 0, 0.05),
+                rgba(0, 255, 0, 0.05) 1px,
+                transparent 1px,
+                transparent
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            animation: scanline 12s linear infinite;
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateY(-100vh); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABnSURBVGhD7cExAQAwDMCg+zfd2VAp5A8JkCRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiTpB3UQA8ZQJQAAAABJRU5ErkJggg==');
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        
+        .error-box {
+            border: 1px dashed #0f0;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .blink {
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        .corrupt-text {
+            color: #f00;
+        }
+        
+        .access-denied {
+            font-size: 2em;
+            color: #f00;
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+        
+        .terminal {
+            background-color: #111;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 3px solid #0f0;
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: #0f0;
+            animation: blink 1s step-end infinite;
+        }
+        
+        .binary-stream {
+            position: absolute;
+            color: rgba(0, 255, 0, 0.3);
+            font-size: 0.9em;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        
+        .error-code {
+            color: #f55;
+            font-weight: bold;
+        }
+        
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 2px;
+            top: 0;
+            color: #0f0;
+            background: #000;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: noise-anim 2s infinite linear alternate-reverse;
+        }
+        
+        @keyframes noise-anim {
+            0% { clip: rect(0, 900px, 0, 0); }
+            10% { clip: rect(0, 900px, 3px, 0); }
+            20% { clip: rect(0, 900px, 0, 0); }
+            30% { clip: rect(0, 900px, 1px, 0); }
+            40% { clip: rect(0, 900px, 4px, 0); }
+            50% { clip: rect(0, 900px, 2px, 0); }
+            60% { clip: rect(0, 900px, 0, 0); }
+            70% { clip: rect(0, 900px, 3px, 0); }
+            80% { clip: rect(0, 900px, 1px, 0); }
+            90% { clip: rect(0, 900px, 2px, 0); }
+            100% { clip: rect(0, 900px, 0, 0); }
+        }
+    </style>
 </head>
 <body>
-  <div id="error-screen" class="error-screen">
-    <h1 class="glitch">[ERROR] ACCESS DENIED</h1>
-    <p class="glitch">Clearance Level Insufficient</p>
-    <p class="glitch">Attempting to bypass node integrity...</p>
-    <p class="glitch">...memory risk detected...</p>
-    <div class="fake-button" id="continue-btn">sudo</div>
-    <div class="code-noise">
-      <code>01100111 01100001 01110010 01110010 01101111 01110011 00101101 01110100 01101000 01110010 01100101 01100001 01110100 00100000 01100001 01100011 01110100 01101001 01110110 01100001 01110100 01100101 01100100</code>
-    </div>
-    <div class="glitch-block">
-      INIT_SEQUENCE(0x04AF) :: RUNNING <br>
-      STACK_DUMP: 0x0f0001ff000001a0f... <br>
-      WARNING: memory leak detected in NODE_5 <br>
-      LOC: garros.prime.ghost.signal[45] -> unresolved echo<br>
-      BINARY_STREAM: 101010111100110111001000010101010101...<br>
-      SIGNAL_FRAGMENT: *whispers* help me *STATIC* don’t listen...
-    </div>
-  </div>
-
-  <div id="main-content">
-    <div class="glitch-overlay">
-      1010111000100101010010101101010100001111000001110100101010010100010101010101010100010001010101001111110001010101 010101...<br>
-      [MEMORY HOOKS LOST] // echo fragment /signal bleed/... <br>
-      >>> INIT STREAM ~ NODE 5-A ... RESIDUAL FOUND. . . <br>
-      [RECORDING SPLICE] = 00001111 11001100 10101010 ...
-    </div>
-
-    <h1 class="glitch">GARROS ARCHIVE NODE 5-A</h1>
-    <p><span class="warning">WARNING:</span> Classified comms backup. Playback may induce stress hallucinations. Continue only with clearance.</p>
-
-    <h2>Recovered Audio Logs</h2>
-
-    <div class="audio-entry">
-      <p><strong>log_5597-A.wav</strong></p>
-      <audio controls>
-        <source src="log_5597-A.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-      <p>"They keep whispering names. Clones who aren’t here..."</p>
+    <div class="noise"></div>
+    <div class="scanline"></div>
+    
+    <div class="error-box">
+        
+        <div class="access-denied">⚠ ACCESS DENIED ⚠</div>
+        
+        <p>You don't have authorization to access this content.</p>
+        <p class="error-code">ERROR 0x7F3A9C: SECURITY VIOLATION DETECTED</p>
+        
+        <div class="terminal" id="main-terminal">
+            <p>> Initializing system diagnostic...</p>
+            <p>> Checking user credentials... <span class="corrupt-text">[FAILED]</span></p>
+            <p>> Verifying security clearance... <span class="corrupt-text">[ERROR]</span></p>
+            <p>> Scanning network... <span id="scan-progress">[=====     ] 50%</span></p>
+            <p>> Connection attempt logged and reported.</p>
+            <p>> <span class="cursor"></span></p>
+        </div>
+        
+        <p>WARNING: Unauthorized access attempts are punishable by law.</p>        
+        <div style="margin-top: 30px; text-align: center;">
+            <!-- Add your audio file here -->
+            <audio controls autoplay loop>
+                <source src="your-audio-file.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
+        <div style="position: absolute; bottom: 10px; right: 10px; font-size: 0.8em;">
+            <span class="blink">SYSTEM ALERT</span> | <span id="date"></span> | <span id="time"></span>
+        </div>
     </div>
 
-    <div class="audio-entry">
-      <p><strong>forest_ping_003.wav</strong></p>
-      <audio controls>
-        <source src="forest_ping_003.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-      <p>"Don’t follow the lights... it knows you're listening."</p>
-    </div>
-
-    <div class="audio-entry">
-      <p><span class="corrupt">echo_ridge_12.wav</span></p>
-      <p><em>[Data Corrupted]</em></p>
-    </div>
-
-    <div class="audio-entry">
-      <p><strong>rex_comm_ghost.wav</strong></p>
-      <audio controls>
-        <source src="rex_comm_ghost.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-      <p>"This isn’t a battle. We’re not supposed to be here."</p>
-    </div>
-
-    <p class="fake-button">Request Clearance Code</p>
-    <p class="glitch">[ NODE CONNECTION UNSTABLE — RETRYING_ ]</p>
-  </div>
+    <script>
+        // Update date and time
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('date').textContent = now.toLocaleDateString();
+            document.getElementById('time').textContent = now.toLocaleTimeString();
+        }
+        
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+        
+        // Create binary streams
+        function createBinaryStream() {
+            const terminal = document.querySelector('.terminal');
+            const stream = document.createElement('div');
+            stream.className = 'binary-stream';
+            
+            // Generate random binary string
+            let binary = '';
+            for (let i = 0; i < 50; i++) {
+                binary += Math.random() > 0.5 ? '1' : '0';
+            }
+            
+            stream.textContent = binary;
+            stream.style.top = Math.random() * 100 + '%';
+            stream.style.left = Math.random() * 100 + '%';
+            
+            terminal.appendChild(stream);
+            
+            // Animate the stream
+            let pos = -200;
+            const speed = 0.5 + Math.random();
+            
+            function animate() {
+                pos += speed;
+                stream.style.transform = `translateX(${pos}px)`;
+                
+                if (pos > terminal.offsetWidth) {
+                    stream.remove();
+                } else {
+                    requestAnimationFrame(animate);
+                }
+            }
+            
+            animate();
+            
+            // Create a new stream after random delay
+            setTimeout(createBinaryStream, Math.random() * 3000);
+        }
+        
+        // Start binary streams
+        setTimeout(createBinaryStream, 500);
+        setTimeout(createBinaryStream, 1000);
+        setTimeout(createBinaryStream, 1500);
+        
+        // Simulate terminal output
+        const terminalMessages = [
+            "WARNING: Unauthorized access detected",
+            "Security protocols engaged",
+            "Trace route initiated",
+            "Firewall breach attempt logged",
+            "Alert: Intrusion detected",
+            "Error: Memory violation",
+            "Segment fault in core dump",
+            "Packet sniffer activated",
+            "Proxy server bypass attempt",
+            "Error 0xDEADBEEF: Stack overflow"
+        ];
+        
+        function addTerminalMessage() {
+            const terminal = document.getElementById('main-terminal');
+            const newMessage = document.createElement('p');
+            newMessage.textContent = "> " + terminalMessages[Math.floor(Math.random() * terminalMessages.length)];
+            terminal.insertBefore(newMessage, terminal.lastElementChild);
+            
+            // Keep terminal from getting too full
+            if (terminal.children.length > 15) {
+                terminal.removeChild(terminal.children[3]);
+            }
+            
+            setTimeout(addTerminalMessage, 2000 + Math.random() * 5000);
+        }
+        
+        setTimeout(addTerminalMessage, 3000);
+        
+        // Animate scan progress
+        let progress = 50;
+        let direction = 1;
+        
+        function updateProgress() {
+            progress += direction * (Math.random() * 10);
+            
+            if (progress > 95) direction = -1;
+            if (progress < 5) direction = 1;
+            
+            const filled = Math.floor(progress / 10);
+            const empty = 10 - filled;
+            document.getElementById('scan-progress').textContent = 
+                `[${'='.repeat(filled)}${' '.repeat(empty)}] ${Math.floor(progress)}%`;
+            
+            setTimeout(updateProgress, 200);
+        }
+        
+        updateProgress();
+        
+        // Occasionally corrupt some text
+        setInterval(function() {
+            const corruptable = document.querySelectorAll('.corrupt-text');
+            corruptable.forEach(el => {
+                if (Math.random() < 0.3) {
+                    const original = el.textContent;
+                    el.textContent = original.split('').map(c => 
+                        Math.random() < 0.2 ? String.fromCharCode(Math.floor(Math.random() * 94) + 33) : c
+                    ).join('');
+                    
+                    // Restore after short delay
+                    setTimeout(() => {
+                        el.textContent = original;
+                    }, 300);
+                }
+            });
+        }, 1000);
+    </script>
 </body>
 </html>

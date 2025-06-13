@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Use curl to ping webhook
         run: |
-          curl -n "https://ploi.io/webhooks/servers/30859/sites/297236/deploy?token=FEEwRWa3b9Tg4tqKiwKGBW5pOvqn7PdRaTxpnF7a4Nlwtnqyci&direct=true"
+          curl -X "POST" -n "https://ploi.io/webhooks/servers/30859/sites/297236/deploy?token=FEEwRWa3b9Tg4tqKiwKGBW5pOvqn7PdRaTxpnF7a4Nlwtnqyci&direct=true"

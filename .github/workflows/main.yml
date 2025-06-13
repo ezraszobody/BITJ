@@ -1,0 +1,13 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  webhook:
+    name: Ploi deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use curl to ping webhook
+        run: |
+          curl -n "https://ploi.io/webhooks/servers/30859/sites/297236/deploy?token=FEEwRWa3b9Tg4tqKiwKGBW5pOvqn7PdRaTxpnF7a4Nlwtnqyci&direct=true"

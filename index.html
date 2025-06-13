@@ -24,10 +24,15 @@
 
     @keyframes glitch {
       0% { opacity: 1; }
-      20% { opacity: 0.7; transform: translateX(-2px); }
-      40% { opacity: 1; transform: translateX(2px); }
-      60% { opacity: 0.6; }
-      80% { opacity: 1; transform: translateY(-1px); }
+      10% { opacity: 0.7; transform: translateX(-2px); }
+      20% { opacity: 1; transform: translateX(2px); }
+      30% { opacity: 0.6; }
+      40% { opacity: 1; transform: translateY(-1px); }
+      50% { opacity: 0.5; transform: translateY(2px); }
+      60% { opacity: 1; transform: none; }
+      70% { opacity: 0.3; transform: translateX(-1px); }
+      80% { opacity: 1; }
+      90% { opacity: 0.7; }
       100% { opacity: 1; transform: none; }
     }
 
@@ -85,19 +90,20 @@
     window.onload = function() {
       const errorAudio = new Audio('error_beep.mp3');
       errorAudio.play();
-      setTimeout(() => {
+      document.getElementById('continue-btn').onclick = function() {
         document.getElementById('error-screen').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
-      }, 5000);
+      };
     };
   </script>
 </head>
 <body>
   <div id="error-screen" class="error-screen">
-    <h1>[ERROR] ACCESS DENIED</h1>
-    <p>Clearance Level Insufficient</p>
-    <p>Attempting to bypass node integrity...</p>
+    <h1 class="glitch">[ERROR] ACCESS DENIED</h1>
+    <p class="glitch">Clearance Level Insufficient</p>
+    <p class="glitch">Attempting to bypass node integrity...</p>
     <p class="glitch">...memory risk detected...</p>
+    <div class="fake-button" id="continue-btn">sudo</div>
   </div>
 
   <div id="main-content">

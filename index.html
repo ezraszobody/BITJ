@@ -1,100 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Master Password</title>
-    <style>
-        body {
+  <meta charset="UTF-8">
+  <title>GARROS ARCHIVE NODE 5</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #33ff33;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-            background-color: #222;
-            color: #fff; /* White text */
-            font-family: Arial, sans-serif;
-        }
+    h1, h2 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        body.password-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .password-container {
-            text-align: center;
-            background-color: #333; /* Dark container */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            width: 500px;
-            align-items: center;
-            justify-content: center;
-        }
-        input[type="password"] {
-            padding: 10px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background-color: #222;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #D4A017; /* Trench-themed yellow */
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #b8860b; /* Darker yellow on hover */
-        }
-        .error {
-            color: #ff4444; /* Red error message */
-            margin-top: 10px;
-        }
-        .dema-container {
-    position: fixed; /* Keeps the image fixed in place */
-    bottom: 10px; /* Positions the container at the bottom */
-    right: 0; /* Positions the container at the right */
-    width: 700px; /* Adjust to control how much of the image is visible */
-    height: 530px; /* Adjust to control how much of the image is visible */
-    z-index: 1000; /* Ensures the image stays on top of other content */
-}
+    .glitch {
+      animation: glitch 1.5s infinite;
+    }
 
-.dema {
-    width: 105%; /* Slightly larger than the container to create a cropping effect */
-    height: 140%; /* Maintains aspect ratio */
-    transform: translate(10%, -5%); /* Adjust to control how much of the image is cropped */
-    object-fit: cover; /* Ensures the image covers the container */
-}
-    </style>
+    @keyframes glitch {
+      0% { opacity: 1; }
+      20% { opacity: 0.7; transform: translateX(-2px); }
+      40% { opacity: 1; transform: translateX(2px); }
+      60% { opacity: 0.6; }
+      80% { opacity: 1; transform: translateY(-1px); }
+      100% { opacity: 1; transform: none; }
+    }
+
+    .warning {
+      color: #ff4444;
+      font-weight: bold;
+    }
+
+    .audio-entry {
+      margin-bottom: 2rem;
+    }
+
+    .corrupt {
+      color: #888;
+      text-decoration: line-through;
+    }
+
+    .redacted {
+      background-color: #111;
+      color: #111;
+      padding: 0 0.5rem;
+      border: 1px solid #111;
+    }
+
+    .fake-button {
+      background-color: #111;
+      color: #33ff33;
+      border: 1px dashed #33ff33;
+      padding: 0.5rem;
+      display: inline-block;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .fake-button:hover {
+      color: #ff4444;
+      border-color: #ff4444;
+    }
+  </style>
 </head>
 <body>
-    <h2>404 ER_ROR</h3>
-    <p>you are in violation. thEy mustn't know you were here. no one should ever find out About this. you can never tell anyone about thiS -- for The sake of the others' survIval, you muSt keep this silent. we mUst keeP silent. no one can know. no one can know. no o ne c an kn ow_</p>
-    <br>
-    <p>(Violation Code. 15398642_14)</p>
-    <div class="password-container">
-        <p>Please enter the master password to continue:</p>
-        <input type="password" id="password" placeholder="Master Password">
-        <button onclick="checkPassword()">Submit</button>
-        <p id="error" class="error"></p>
-      
-    </div><div class="dema-container">
-    <img class="dema"src="ac85bbe75c6f7973302550440b7582dd5996fe1fr1-1536-1517v2_hq-removebg-preview.png" alt="">
-</div>
-    <script>
-        function checkPassword() {
-            const password = document.getElementById('password').value;
-            const error = document.getElementById('error');
+  <h1 class="glitch">GARROS ARCHIVE NODE 5-A</h1>
+  <p><span class="warning">WARNING:</span> Classified comms backup. Playback may induce stress hallucinations. Continue only with clearance.</p>
 
-            // Replace 'YourMasterPassword' with your actual master password
-            if (password === 'failedperimeterescape') {
-                window.location.href = 'test.php'; // Redirect to the main page
-            } else {
-                error.textContent = 'Incorrect password. Please try again.';
-            }
-        }
-    </script>
+  <h2>Recovered Audio Logs</h2>
+
+  <div class="audio-entry">
+    <p><strong>log_5597-A.wav</strong></p>
+    <audio controls>
+      <source src="log_5597-A.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <p>"They keep whispering names. Clones who aren’t here..."</p>
+  </div>
+
+  <div class="audio-entry">
+    <p><strong>forest_ping_003.wav</strong></p>
+    <audio controls>
+      <source src="forest_ping_003.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <p>"Don’t follow the lights... it knows you're listening."</p>
+  </div>
+
+  <div class="audio-entry">
+    <p><span class="corrupt">echo_ridge_12.wav</span></p>
+    <p><em>[Data Corrupted]</em></p>
+  </div>
+
+  <div class="audio-entry">
+    <p><strong>rex_comm_ghost.wav</strong></p>
+    <audio controls>
+      <source src="rex_comm_ghost.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <p>"This isn’t a battle. We’re not supposed to be here."</p>
+  </div>
+
+  <p class="fake-button">Request Clearance Code</p>
+  <p class="glitch">[ NODE CONNECTION UNSTABLE — RETRYING_ ]</p>
+
 </body>
 </html>

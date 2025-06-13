@@ -109,3 +109,58 @@ small.text-muted {
     color: #fff384;
     background-color: rgb(100, 100, 0);
 }
+
+/* Reply Modal Styles */
+.reply-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1001;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.reply-modal h3 {
+    margin-bottom: 15px;
+}
+.reply-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+.reply-textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    min-height: 100px;
+}
+.reply-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+.reply-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.reply-profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.reply-actions {
+    margin-top: 5px;
+}

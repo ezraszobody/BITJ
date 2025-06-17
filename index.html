@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SYSTEM ERROR</title>
     <link rel="shortcut icon" href="/Vienna_Convention_road_sign_Aa-32-V1.svg.png">
     <style>
@@ -12,7 +12,7 @@
             font-family: 'Courier New', monospace;
             margin: 0;
             padding: 20px;
-            overflow: hidden;
+            overflow: visible;
             position: relative;
         }
         
@@ -82,9 +82,12 @@
         .error-box {
             border: 1px solid rgb(255, 0, 0);
             padding: 20px;
-            margin: 50px auto;
+            margin: 20px auto;
             max-width: 800px;
             position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 90vh;
         }
         
         .blink {
@@ -112,7 +115,6 @@
             margin: 20px 0;
             border-left: 3px solid #0f0;
             position: relative;
-            overflow: hidden;
             min-height: 200px;
         }
         
